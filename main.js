@@ -39,10 +39,17 @@ const NAV = [
 ];
 
 const Section = ({children}) => {
-  const Comp = motion ? motion.div : "div";
+  if (motion) {
+    return React.createElement(
+      motion.div,
+      { initial:{opacity:0,y:8}, animate:{opacity:1,y:0}, transition:{duration:0.35}, className:"mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8" },
+      children
+    );
+  }
+  // fallback: plain div without animation props
   return React.createElement(
-    Comp,
-    { initial:{opacity:0,y:8}, animate:{opacity:1,y:0}, transition:{duration:0.35}, className:"mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8" },
+    "div",
+    { className:"mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8" },
     children
   );
 };
