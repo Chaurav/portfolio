@@ -1,6 +1,6 @@
 
 const { useState } = React;
-const { motion } = window.framerMotion || window.Motion || {};
+const motion = (window.framerMotion && window.framerMotion.motion) || null;
 
 const Button = ({children, variant="default", size="md", className="", ...props}) => {
   const base = "inline-flex items-center justify-center font-medium transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none";
@@ -38,8 +38,26 @@ const NAV = [
   { id: "contact", label: "Contact" },
 ];
 
-const Section = ({children}) =>
-  React.createElement(motion.div, {initial:{opacity:0,y:8}, animate:{opacity:1,y:0}, transition:{duration:0.35}, className:"mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8"}, children);
+const Section = ({children}) => {
+  if (motion && motion.div) {
+    return React.createElement(
+      motion.div,
+      {
+        initial: { opacity: 0, y: 8 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.35 },
+        className: "mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8"
+      },
+      children
+    );
+  }
+  // fallback (always safe)
+  return React.createElement(
+    "div",
+    { className: "mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8" },
+    children
+  );
+};
 
 const Header = ({current, setCurrent}) => (
   React.createElement("header", {className:"sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-neutral-950/70 border-b border-neutral-200 dark:border-neutral-800"},
