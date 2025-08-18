@@ -66,7 +66,7 @@ const Header = ({current, setCurrent}) => (
         React.createElement("div", {className:"h-10 w-10 round-3xl gradient-avatar rounded-2xl"}),
         React.createElement("div", null,
           React.createElement("h1", {className:"text-lg font-semibold tracking-tight"},"Sourav Surya Majumder"),
-          React.createElement("p", {className:"text-xs text-neutral-600 dark:text-neutral-400"},"Data Science & AI • Geometric Data Science • materials science")
+          React.createElement("p", {className:"text-xs text-neutral-600 dark:text-neutral-400"},"Data Science & AI • Geometric Data Science • Materials Science")
         )
       ),
       React.createElement("nav", {className:"hidden md:flex gap-2"},
@@ -233,7 +233,7 @@ const Activities = () => (
           React.createElement(CardTitle,{className:"flex items-center gap-2"},"MIF++ Seminar Participant — Materials Innovation Factory")
         ),
         React.createElement(CardContent,{className:"text-sm"},
-          React.createElement("p",null,"Attend interdisciplinary seminars and research talks on advanced materials design, automation, and data‑driven discovery; engage with topics in computational materials science, machine learning for chemistry, and high‑throughput experimentation.")
+          React.createElement("p",null,"Attend interdisciplinary seminars and research talks on advanced materials design, automation, and data‑driven discovery; engage with topics in computational Materials Science, machine learning for chemistry, and high‑throughput experimentation.")
         )
       )
     )
@@ -289,7 +289,7 @@ const About = () => (
         React.createElement("p",null,"I value clarity, reproducibility, and practical impact — whether optimising parsers for large CIF datasets or designing analysis pipelines that others can rely on."),
         React.createElement("div",{className:"flex flex-wrap gap-2 pt-1"},
           React.createElement(Badge,{variant:"secondary"},"Geometric Data Science"),
-          React.createElement(Badge,{variant:"secondary"},"materials science"),
+          React.createElement(Badge,{variant:"secondary"},"Materials Science"),
           React.createElement(Badge,{variant:"secondary"},"Machine Learning")
         )
       ),
