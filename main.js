@@ -332,7 +332,7 @@ const Contact = () => (
           React.createElement("a",{href:"./Sourav_Surya_Majumder_CV.docx", download:true, className:"inline-flex", title:"Download CV"},
             React.createElement(Button,{className:"rounded-2xl"},"Download .docx")
           ),
-          React.createElement("p",{className:"text-xs text-neutral-600 dark:text-neutral-400"},"Keep the filename the same so the link works.")
+          React.createElement("p",{className:"text-xs text-neutral-600 dark:text-neutral-400"})
         )
       )
     )
